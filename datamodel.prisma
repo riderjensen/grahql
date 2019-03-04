@@ -1,13 +1,27 @@
 type User {
   id: ID! @unique
   email: String @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
   name: String!
   posts: [Post!]!
 }
 
 type Post {
   id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
   title: String!
   published: Boolean! @default(value: "false")
   author: User
+}
+
+type Comment {
+	id: ID! @unique
+  	createdAt: DateTime!
+  	updatedAt: DateTime!
+	bodyText: String!
+	createdBy: User
+	parentPost: Post!
+	parentComment: Comment
 }

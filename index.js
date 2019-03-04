@@ -18,6 +18,12 @@ async function main() {
 		})
 	console.log(`Created new user: ${newUser.name} (ID: ${newUser.id})`)
 
+	const newComment = await prisma.createComment({
+		bodyText: 'Here is a body text',
+		createdBy: newUser,
+		parentComment: null,
+	})
+
 	// Read all users from the database and print them to the console
 	const allUsers = await prisma.users()
 	console.log(allUsers)
