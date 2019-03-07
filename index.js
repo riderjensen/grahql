@@ -7,7 +7,7 @@ async function main() {
 	const newUser = await prisma
 		.createUser({
 			name: "Bob",
-			email: "bob@prisma.io",
+			email: "bob@shrisma.io",
 			posts: {
 				create: [{
 					title: "Join us for GraphQL Conf in 2019",

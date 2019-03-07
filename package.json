@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"docker-start": "docker-compose -f ./docker-compose.yml up -d",
-		"deploy": "prisma deploy"
+		"deploy": "prisma deploy",
+		"reset": "prisma reset --force",
+		"start": "node index.js"
 	},
 	"author": "",
 	"license": "ISC",
